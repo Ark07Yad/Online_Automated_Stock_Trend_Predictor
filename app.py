@@ -138,6 +138,6 @@ st.pyplot(fig2)
 
 # Display the historical and predicted stock prices using a Streamlit app
 #st.title("Stock Price Prediction for {}".format(user_input))
-#st.line_chart(df)
+##st.line_chart(df)
 #st.subheader("Latest Price")
 #st.write(latest_data)
