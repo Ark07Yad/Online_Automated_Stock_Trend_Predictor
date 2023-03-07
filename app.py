@@ -1,3 +1,5 @@
+# Importing the libaries
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,29 +11,13 @@ from datetime import date
 from datetime import timedelta
 
 
-# start = '2005-01-01'
-# end = '2023-02-24'
-
-#start = '2013-01-01'
-#end = '2023-02-24'
-
-
-# Create a date range picker widget with default values set to today's date and 7 days from now
-#start_date = st.date_input("End date", date.today() - timedelta(days=300))
-#end_date = st.date_input("Start date", date.today())
-# end_date = st.date_input("End date", date.today() - timedelta(days=300))
-
-# Print the selected start and end dates
-#st.write("Start date:", start_date)
-#st.write("End date:", end_date)
-
 
 yfin.pdr_override()
 
 
 st.title('Online Automated Stock Trend Predictor')
 
-# Create a date range picker widget with default values set to today's date and 7 days from now
+# Create a date range picker widget with default values set to today's date and 300 days from now
 start_date = st.date_input("Start date", date.today() - timedelta(days=300))
 end_date = st.date_input("End date", date.today())
 # end_date = st.date_input("End date", date.today() - timedelta(days=300))
@@ -62,7 +48,7 @@ plt.plot(df.Close)
 st.pyplot(fig)
 
 
-
+# moving chart of 100 days
 st.subheader('Closing Price vs Time chart with 100MA')
 ma100 = df.Close.rolling(100).mean()
 fig = plt.figure(figsize=(12,6))
@@ -70,7 +56,7 @@ plt.plot(ma100)
 plt.plot(df.Close)
 st.pyplot(fig)
 
-
+# moving chart of 200 days
 st.subheader('Closing Price vs Time chart with 100MA & 200MA')
 ma100 = df.Close.rolling(100).mean()
 ma200 = df.Close.rolling(200).mean()
@@ -134,10 +120,4 @@ plt.legend()
 st.pyplot(fig2)
 
 
-#latest_data = yfin.Ticker(user_input).history(period='1d')
 
-# Display the historical and predicted stock prices using a Streamlit app
-#st.title("Stock Price Prediction for {}".format(user_input))
-##st.line_chart(df)
-#st.subheader("Latest Price")
-#st.write(latest_data)
