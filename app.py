@@ -38,10 +38,12 @@ st.write(latest_data)
 
 
 #Describing Data
+
 st.subheader('Data from 2013 - 2023')
 st.write(df.describe())
 
 # Visualizations
+
 st.subheader('Closing Price vs Time chart')
 fig = plt.figure(figsize = (12,6))
 plt.plot(df.Close)
@@ -49,6 +51,7 @@ st.pyplot(fig)
 
 
 # moving chart of 100 days
+
 st.subheader('Closing Price vs Time chart with 100MA')
 ma100 = df.Close.rolling(100).mean()
 fig = plt.figure(figsize=(12,6))
@@ -57,6 +60,7 @@ plt.plot(df.Close)
 st.pyplot(fig)
 
 # moving chart of 200 days
+
 st.subheader('Closing Price vs Time chart with 100MA & 200MA')
 ma100 = df.Close.rolling(100).mean()
 ma200 = df.Close.rolling(200).mean()
@@ -84,7 +88,9 @@ data_training_array = scalar.fit_transform(data_training)
 
 
 # load my model
+
 model = load_model('./keras_model.h5')
+
 
 # Testing Part
 
@@ -110,6 +116,7 @@ y_test = y_test*scale_factor
 
 
 # Final Graph
+
 st.subheader('Prediction vs Original')
 fig2 = plt.figure(figsize=(12,6))
 plt.plot(y_test, 'b', label = 'Original Price')
