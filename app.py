@@ -27,7 +27,7 @@ st.write("Start date:", start_date)
 st.write("End date:", end_date)
 
 user_input = st.text_input('Enter Stock Ticker', 'AAPL')
-# df = data.DataReader(user_input,'yahoo',start,end)
+
 df = data.DataReader(user_input, start_date, end_date)
 
 
